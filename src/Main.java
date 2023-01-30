@@ -5,6 +5,7 @@ public class Main {
 //Declared an integer with different variables without assigning any value to them
 int n1, n2, ch, cal;
 //Created a boolean statement to loop through and then used while loop to enable the user repeat the function
+
 boolean calculateAgain = true;
 while(calculateAgain == true) {
     System.out.println("Enter two Numbers: ");
@@ -38,14 +39,22 @@ while(calculateAgain == true) {
         System.out.println("REMAINDER " + cal);
 
     }
-    System.out.println("Clear to calculate again, enter 1, otherwise enter 2: ");
-    int r2 = r.nextInt();
-    if (r2 == 1){
-    calculateAgain = true;
-    }
-    if(r2 == 2){
-        calculateAgain = false;
+        System.out.println("Clear to calculate again, enter 1, otherwise enter 2: ");
+        int r2;
+        while(true) {
+            r2 = r.nextInt();
+           if(r2 == 1 || r2 ==2) {
+               break;
+           }
+           System.out.println("Wrong input!... Enter 1 to calculate or 2 to Exit");
+        }
+
+        if (r2 == 1) {
+            calculateAgain = true;
+        } else if (r2 == 2) {
+            calculateAgain = false;
+        }
+
     }
 }
-    }
 }
